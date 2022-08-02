@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mama я в intert!</title>
+<style>
+    body{
+        display: flex;
+
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: lightcoral;
+transition: all .25s;
+}
+div {
+text-align: center;
+}
+button{
+    border: 1px solid black;
+    padding: 15px 20px;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+        h1, h3 {
+    animation: down 1s;
+}
+    @keyframes down {
+    from{
+transform: translateY(-50px);
+    }
+to{
+transform: translateY(0);
+}
+
+}
+</style>
+</head>
+<body>
+    <div>
+      
+        <h3>Privet brat</h3>
+    
+        <h1>Acum e oara 20:20:20</h1>
+ <button>Schimba Fonul</button>
+    </div>
+
+    <script>
+        
+        document.querySelector('h3').textContent = 'Privet Brat'
+        document.querySelector('h1').textContent = ' Acum ' + new Date().toLocaleTimeString()
+
+setInterval(function() {
+    document.querySelector('h1').textContent = ' Acum ' + new Date().toLocaleTimeString()
+},1000)
+const colors =['indigo', 'green','darkred','lightgreen','blue','#E0FFFF']
+let index = 0
+document.querySelector('button').onclick = function(){
+    document.body.style.background = colors[index]
+    index++
+    if (index >= colors.length) index = 0
+}
+    </script>
+    
+   
+</body>
+</html>
